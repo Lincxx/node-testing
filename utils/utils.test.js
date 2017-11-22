@@ -17,14 +17,15 @@ it('should square a number', () => {
     expect(res).toBe(4).toBeA('number');
 });
 
-it('should verify first and last names are set'), () => {
-    var res = utils.setName({
-        age: 40, 
-        location: 'Erwin'
-    }, 'Jeremy Lincoln');
-    console.log(res);
-    //expect(res).toInclude(4);
-}
+it('should verify first and last names are set', () => {
+    var user = { age: 40, location: 'Erwin' }
+    var res = utils.setName(user, 'Jeremy Lincoln');
+    
+    expect(res).toInclude({
+        firstName: 'Jeremy',
+        lastName: 'Lincoln'
+    }).toBeA('object');
+});
 
 // it('should expect some values', () => {
 //     //check for the not equal to
