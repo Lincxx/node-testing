@@ -27,6 +27,23 @@ it('should verify first and last names are set', () => {
     }).toBeA('object');
 });
 
+//async test layout
+it('should async add two numbers', (done) =>{
+    utils.asyncAdd(4, 3, (sum) => {
+        expect(sum).toBe(7).toBeA('number');
+        done(); //this has to be called or the assertion test never finishes
+    });
+});
+
+it('should async square a number', (done) => {
+    utils.asyncSquare(3, (sum) => {
+        expect(sum).toBe(9).toBeA('number');
+        done();
+    })
+})
+
+
+
 // it('should expect some values', () => {
 //     //check for the not equal to
 //     //expect(12).toNotBe(11);
