@@ -1,4 +1,11 @@
 //since we are just returning. We don't need the return keyword or brackets
 module.exports.add = (a, b) => a + b;
 
-module.exports.square = (x) => x * x + 1;
+module.exports.square = (x) => x * x;
+
+module.exports.setName = (user, fullName) => {
+    var names = fullName.split(' ');
+    user.firstName = names[0];
+    user.lastName = names[1];
+    return user;
+};
